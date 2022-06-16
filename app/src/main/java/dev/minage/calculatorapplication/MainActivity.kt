@@ -31,53 +31,100 @@ class MainActivity : AppCompatActivity() {
         tvStatus = findViewById(R.id.tvStatus)
         btnAdd = findViewById(R.id.btnAdd)
         btnAdd.setOnClickListener {
+            var error = false
+            tilNumOne.error = null
+            tilNumTwo.error = null
             val a= etNumOne.text.toString()
             val b = etNumTwo.text.toString()
-            validation()
+            if (a.isBlank()){
+                tilNumOne.error = "Enter first number"
+                error = true
+            }
+            if (b.isBlank()){
+                tilNumTwo.error = "Enter second number"
+                error = true
+            }
+            if (!error)
             putTogether(a.toInt(),b.toInt())
         }
         btnDivision = findViewById(R.id.btnDivision)
         btnDivision.setOnClickListener {
-            val a = etNumOne.text.toString()
+            var error = false
+            tilNumOne.error = null
+            tilNumTwo.error = null
+            val a= etNumOne.text.toString()
             val b = etNumTwo.text.toString()
-            validation()
+            if (a.isBlank()){
+                tilNumOne.error = "Enter first number"
+                error = true
+            }
+            if (b.isBlank()){
+                tilNumTwo.error = "Enter second number"
+                error = true
+            }
+            if (!error)
             divide(a.toInt(),b.toInt())
 
         }
         btnModulus = findViewById(R.id.btnModulus)
         btnModulus.setOnClickListener {
-            val a = etNumOne.text.toString()
+            var error = false
+            tilNumOne.error = null
+            tilNumTwo.error = null
+            val a= etNumOne.text.toString()
             val b = etNumTwo.text.toString()
-            validation()
+            if (a.isBlank()){
+                tilNumOne.error = "Enter first number"
+                error = true
+            }
+            if (b.isBlank()){
+                tilNumTwo.error = "Enter second number"
+                error = true
+            }
+            if (!error)
             modulus(a.toInt(),b.toInt())
+
+//            validation()
 
 
         }
         btnSubtract = findViewById(R.id.btnSubtract)
         btnSubtract.setOnClickListener {
-            val a = etNumOne.text.toString()
+            var error = false
+            tilNumOne.error = null
+            tilNumTwo.error = null
+            val a= etNumOne.text.toString()
             val b = etNumTwo.text.toString()
-            validation()
+            if (a.isBlank()){
+                tilNumOne.error = "Enter first number"
+                error = true
+            }
+            if (b.isBlank()){
+                tilNumTwo.error = "Enter second number"
+                error = true
+            }
+            if (!error)
+
             difference(a.toInt(),b.toInt())
         }
     }
 
-    fun validation(){
-        var error = false
-        tilNumOne.error = null
-        tilNumTwo.error = null
-        val numOne = etNumOne.text.toString()
-        val numTwo= etNumTwo.text.toString()
-
-        if (numOne.isBlank()){
-            tilNumOne.error = "Enter first number"
-            error = true
-        }
-        if (numTwo.isBlank()){
-            tilNumTwo.error = "Enter second number"
-            error = true
-}
-    }
+//    fun validation(){
+//        var error = false
+//        tilNumOne.error = null
+//        tilNumTwo.error = null
+//        val numOne = etNumOne.text.toString()
+//        val numTwo= etNumTwo.text.toString()
+//
+//        if (numOne.isBlank()){
+//            tilNumOne.error = "Enter first number"
+//            error = true
+//        }
+//        if (numTwo.isBlank()){
+//            tilNumTwo.error = "Enter second number"
+//            error = true
+//}
+//    }
     fun putTogether(numOne: Int, numTwo: Int){
         val add = numOne + numTwo
         tvStatus.text = add.toString()
